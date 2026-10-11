@@ -90,3 +90,5 @@ cvim .
 
 The config lives in `~/.config/nvim-craftzdog`, so it does not replace a
 regular `~/.config/nvim`.
+
+See [SHORTCUTS.md](SHORTCUTS.md) for the keys that differ from stock Vim.
