@@ -145,7 +145,7 @@ if python3 -c 'import venv, ensurepip' >/dev/null 2>&1; then
 fi
 
 echo
-echo "Downloading plugins and language servers. This takes 5 to 10 minutes..."
+echo "Downloading plugins and language servers. This takes a few minutes..."
 
 NVIM_APPNAME="$APP" nvim --headless \
 	--cmd 'lua vim.fn.confirm = function() return 1 end' \

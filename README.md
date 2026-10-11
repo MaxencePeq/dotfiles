@@ -17,6 +17,27 @@ What I changed on top of it:
 - `config/tmux/tmux-private.conf`: my tmux key bindings
 - Copilot removed
 
+## Try it in Docker
+
+To try the config without installing anything on your machine, build the Linux
+sandbox (a couple of minutes the first time) and open a shell in it:
+
+```bash
+docker build -t dotfiles .
+docker run -it --rm dotfiles
+```
+
+Inside the container, run `cvim .`. To try it on one of your own projects,
+mount it:
+
+```bash
+docker run -it --rm -v "$PWD":/work -w /work dotfiles
+```
+
+Icons need a [Nerd Font](https://www.nerdfonts.com/) in your terminal. There is
+no macOS container (Docker only runs Linux): on a Mac, install it directly, it
+goes in its own folder and leaves your existing Neovim untouched.
+
 ## Requirements
 
 `install.sh` never installs system packages. It lists what is missing and stops.
