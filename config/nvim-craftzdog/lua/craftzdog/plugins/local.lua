@@ -2,7 +2,6 @@
 
 vim.pack.add({
 	{ src = gh("windwp/nvim-ts-autotag") },
-	{ src = gh("GCBallesteros/jupytext.nvim") },
 	{ src = gh("kylechui/nvim-surround") },
 })
 
@@ -12,9 +11,6 @@ require("nvim-surround").setup()
 
 -- Auto close/rename JSX, HTML and Twig tags
 require("nvim-ts-autotag").setup()
-
--- Open .ipynb notebooks as Python with "# %%" cells instead of raw JSON (needs the jupytext CLI)
-require("jupytext").setup()
 
 require("nvim-treesitter").install({ "twig", "dockerfile" })
 
@@ -67,7 +63,6 @@ local mason_tools = {
 	"json-lsp",
 	"css-lsp",
 	"php-cs-fixer",
-	"jupytext",
 }
 vim.api.nvim_create_autocmd("VimEnter", {
 	once = true,
@@ -85,10 +80,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 -- No macro recording: a stray q silently starts one, and blink.cmp turns completion off meanwhile.
--- Buffer-local q (Oil, explorer, pickers) still closes those windows.
+-- Buffer-local q (Oil, pickers) still closes those windows.
 vim.keymap.set({ "n", "x" }, "q", "<Nop>")
-
--- File tree sidebar (Snacks explorer), same key as LazyVim
-vim.keymap.set("n", "<leader>e", function()
-	Snacks.explorer()
-end, { desc = "Toggle file tree" })

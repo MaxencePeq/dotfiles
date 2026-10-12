@@ -13,7 +13,7 @@ design goes to him.
 What I changed on top of it:
 
 - `config/nvim-craftzdog/lua/craftzdog/plugins/local.lua`: my additions
-  (PHP/Symfony, Twig, Python, Jupyter notebooks, a file tree, surround)
+  (PHP/Symfony, Twig, Python, surround)
 - `config/tmux/tmux-private.conf`: my tmux key bindings
 - Copilot removed
 
@@ -42,11 +42,11 @@ goes in its own folder and leaves your existing Neovim untouched.
 
 `install.sh` never installs system packages. It lists what is missing and stops.
 
-| Required                              | Optional                       |
-| ------------------------------------- | ------------------------------ |
-| Neovim 0.12+, tree-sitter CLI 0.26.1+ | PHP + Composer (PHP support)   |
-| git, curl, tar, gzip, unzip           | Python 3 with venv (notebooks) |
-| a C compiler, Node.js + npm           | ripgrep, fd, lazygit, tmux     |
+| Required                              | Optional                     |
+| ------------------------------------- | ---------------------------- |
+| Neovim 0.12+, tree-sitter CLI 0.26.1+ | PHP + Composer (PHP support) |
+| git, curl, tar, gzip, unzip           | ripgrep, fd, lazygit, tmux   |
+| a C compiler, Node.js + npm           |                              |
 
 macOS:
 
@@ -59,8 +59,7 @@ go in `~/.local`, which must be in your `PATH`):
 
 ```bash
 sudo apt install git curl tar gzip unzip build-essential nodejs npm \
-  python3 python3-venv php-cli php-xml php-mbstring php-curl composer \
-  ripgrep fd-find tmux
+  php-cli php-xml php-mbstring php-curl composer ripgrep fd-find tmux
 
 mkdir -p ~/.local/bin
 curl -fsSL https://github.com/neovim/neovim/releases/download/v0.12.2/nvim-linux-x86_64.tar.gz | tar -xz -C ~/.local

@@ -55,7 +55,6 @@ have tmux || add_optional "tmux (the tmux config will be skipped)"
 if ! have php || ! have composer; then
 	add_optional "php + composer (PHP/Symfony support)"
 fi
-python3 -c 'import venv, ensurepip' >/dev/null 2>&1 || add_optional "python3 with venv (Jupyter notebooks)"
 
 if [ -n "$missing_optional" ]; then
 	echo "Optional tools not found (the config works without them):"
@@ -139,9 +138,6 @@ fi
 tools="twiggy-language-server pyright yaml-language-server html-lsp json-lsp css-lsp"
 if have php && have composer; then
 	tools="$tools phpactor php-cs-fixer"
-fi
-if python3 -c 'import venv, ensurepip' >/dev/null 2>&1; then
-	tools="$tools jupytext"
 fi
 
 echo

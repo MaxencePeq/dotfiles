@@ -22,8 +22,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates git curl tar gzip unzip build-essential nodejs npm \
-        python3 python3-venv php-cli php-xml php-mbstring php-curl composer \
-        ripgrep fd-find tmux \
+        php-cli php-xml php-mbstring php-curl composer ripgrep fd-find tmux \
     && rm -rf /var/lib/apt/lists/*
 
 # Neovim and the tree-sitter CLI come from their GitHub releases: Ubuntu's

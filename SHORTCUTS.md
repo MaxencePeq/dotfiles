@@ -35,7 +35,6 @@ switches it off for a buffer), and diagnostics show a message but no underline
 
 | Key | Action |
 | --- | --- |
-| `Space e` `*` | Toggle the file tree. Inside: `l` open, `h` close folder, `a` add, `r` rename, `d` delete, `H` hidden files |
 | `sf` | Floating file explorer (Oil). Edit it like a buffer, `:w` to apply, `h` parent, `q` close |
 | `;f` / `;r` | Find a file / search text in the project |
 | `\\` | Open buffers |
