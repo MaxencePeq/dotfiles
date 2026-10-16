@@ -82,3 +82,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- No macro recording: a stray q silently starts one, and blink.cmp turns completion off meanwhile.
 -- Buffer-local q (Oil, pickers) still closes those windows.
 vim.keymap.set({ "n", "x" }, "q", "<Nop>")
+
+-- Prisma (.prisma schema files); LSP binary: :MasonInstall prisma-language-server
+require("nvim-treesitter").install({ "prisma" })
+vim.lsp.enable({ "prismals" })
