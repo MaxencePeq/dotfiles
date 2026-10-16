@@ -3,6 +3,7 @@
 vim.pack.add({
 	{ src = gh("windwp/nvim-ts-autotag") },
 	{ src = gh("kylechui/nvim-surround") },
+	{ src = gh("MeanderingProgrammer/render-markdown.nvim") },
 })
 
 -- Wrap/change/delete surrounding pairs: S in visual, ys/cs/ds in normal.
@@ -11,6 +12,9 @@ require("nvim-surround").setup()
 
 -- Auto close/rename JSX, HTML and Twig tags
 require("nvim-ts-autotag").setup()
+
+-- Render Markdown in the buffer (headings, tables, checkboxes, code blocks); raw text in insert mode
+require("render-markdown").setup()
 
 require("nvim-treesitter").install({ "twig", "dockerfile" })
 
